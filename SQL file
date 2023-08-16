@@ -1,61 +1,49 @@
+-- Database created with name: db 
+
 USE db;
--- CREATE TABLE customer (
--- customerId INT PRIMARY KEY,
--- customerName VARCHAR(50) NOT NULL,
--- customerEmail VARCHAR(50) NOT NULL,
--- mobileno VARCHAR(10) NOT NULL,
--- address VARCHAR(50) NOT NULL,
--- gender VARCHAR(10) NOT NULL
--- );
+CREATE TABLE customer (
+customerId INT PRIMARY KEY,
+customerName VARCHAR(50) NOT NULL,
+customerEmail VARCHAR(50) NOT NULL,
+mobileno VARCHAR(10) NOT NULL,
+address VARCHAR(50) NOT NULL,
+gender VARCHAR(10) NOT NULL
+);
 
--- select * from customer;
+select * from customer;
 
 
--- CREATE TABLE nurse (
--- nurseId INT PRIMARY KEY,
--- nurseName VARCHAR(50) NOT NULL,
--- mobileno VARCHAR(10) NOT NULL,
--- address VARCHAR(50) NOT NULL
--- );
+CREATE TABLE nurse (
+nurseId INT PRIMARY KEY,
+nurseName VARCHAR(50) NOT NULL,
+mobileno VARCHAR(10) NOT NULL,
+address VARCHAR(50) NOT NULL
+);
 
--- SELECT * FROM NURSE;
+SELECT * FROM NURSE;
 
--- CREATE TABLE service (
--- serviceId INT PRIMARY KEY,
--- serviceName VARCHAR(50) NOT NULL,
--- serviceDescription VARCHAR(50) NOT NULL,
--- charges FLOAT NOT NULL
--- );
+CREATE TABLE service (
+serviceId INT PRIMARY KEY,
+serviceName VARCHAR(50) NOT NULL,
+serviceDescription VARCHAR(50) NOT NULL,
+charges FLOAT NOT NULL
+);
 
--- select * from service;
+select * from service;
+show tables;
 
--- CREATE TABLE Appointment (
--- appointmentId INT PRIMARY KEY,
--- customerId INT,
--- nurseId INT,
--- serviceId INT,
--- date DATETIME,
--- appointmentStatus BOOLEAN,
--- FOREIGN KEY(customerId) REFERENCES customer(customerId),
--- FOREIGN KEY(nurseId) REFERENCES nurse(nurseId),
--- FOREIGN KEY(serviceId) REFERENCES service(serviceId)
--- );
+select * from appointment;
+create table Appointment (
+appointmentId int PRIMARY KEY,
+customerId int,
+nurseId int,
+serviceId int,
+appointmentDate date,
+appointmentStatus boolean,
+FOREIGN KEY(customerId) REFERENCES customer(customerId),
+FOREIGN KEY(nurseId) REFERENCES nurse(nurseId),
+FOREIGN KEY(serviceId) REFERENCES service(serviceId)
+);
 
--- DROP TABLE Appointment;
--- show tables;
--- desc appointment;
-
--- select * from appointment;
--- create table Appointment (
--- appointmentId int PRIMARY KEY,
--- customerId int,
--- nurseId int,
--- serviceId int,
--- appointmentDate date,
--- appointmentStatus boolean,
--- FOREIGN KEY(customerId) REFERENCES customer(customerId),
--- FOREIGN KEY(nurseId) REFERENCES nurse(nurseId),
--- FOREIGN KEY(serviceId) REFERENCES service(serviceId)
--- );
--- select * from appointment;
+select * from appointment;
 
